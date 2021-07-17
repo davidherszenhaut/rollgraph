@@ -1,0 +1,44 @@
+name: Merge and Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    strategy:
+      matrix:
+        node-version: [16.x]
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js version ${{ matrix.node-version }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ matrix.node-version }}
+
+      - name: Install packages
+        run: npm ci
+
+      - name: Build package
+        run: npm run build --if-present
+
+      - name: Run tests
+        run: npm test
+
+      - name: Deploy package
+        run: |
+          git config --global user.name $user-name
+          git config --global user.email $user-email
+          git remote set-url origin https://${github-token}@github.com/${repository}
+          npm run deploy
+        env:
+          user-name: 'github-actions[bot]'
+          user-email: 'github-actions[bot]@users.noreply.github.com'
+          github-token: ${{ secrets.ACTIONS_DEPLOY_TOKEN }}
+          repository: ${{ github.repository }}
