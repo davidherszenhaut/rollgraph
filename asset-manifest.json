@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/rollgraph/static/css/main.3ec58450.chunk.css",
+    "main.js": "/rollgraph/static/js/main.ab17978b.chunk.js",
+    "main.js.map": "/rollgraph/static/js/main.ab17978b.chunk.js.map",
+    "runtime-main.js": "/rollgraph/static/js/runtime-main.03c04f02.js",
+    "runtime-main.js.map": "/rollgraph/static/js/runtime-main.03c04f02.js.map",
+    "static/js/2.9ea411d1.chunk.js": "/rollgraph/static/js/2.9ea411d1.chunk.js",
+    "static/js/2.9ea411d1.chunk.js.map": "/rollgraph/static/js/2.9ea411d1.chunk.js.map",
+    "static/js/3.da351ce9.chunk.js": "/rollgraph/static/js/3.da351ce9.chunk.js",
+    "static/js/3.da351ce9.chunk.js.map": "/rollgraph/static/js/3.da351ce9.chunk.js.map",
+    "index.html": "/rollgraph/index.html",
+    "static/css/main.3ec58450.chunk.css.map": "/rollgraph/static/css/main.3ec58450.chunk.css.map",
+    "static/js/2.9ea411d1.chunk.js.LICENSE.txt": "/rollgraph/static/js/2.9ea411d1.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.03c04f02.js",
+    "static/js/2.9ea411d1.chunk.js",
+    "static/css/main.3ec58450.chunk.css",
+    "static/js/main.ab17978b.chunk.js"
+  ]
+}
