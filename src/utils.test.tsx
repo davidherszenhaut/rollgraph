@@ -1,7 +1,7 @@
 import { generateRandomIntegerInclusive } from './utils';
 
 const min:number = Math.floor(Math.random() * 10);
-const max:number = Math.floor(Math.random() * 10);
+const max:number = min * 3;
 
 test('Generates an integer', () => {
   expect(typeof generateRandomIntegerInclusive(min, max)).toBe('number')
