@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="App">
       <header>rollgraph</header>
-      <button onClick={() => setRandomInt(generateRandomIntegerInclusive(1, 6))}>Test</button>
+      <button onClick={() => setRandomInt(generateRandomIntegerInclusive(1, 6))}>Click Me!</button>
       <p>{randomInt}</p>
     </div>
   );
