@@ -1,9 +1,8 @@
-import React, { useState } from 'react';
+import React, { ReactElement, useState } from 'react';
 import { rollDice } from './utils';
 import './App.css';
 
-function App() {
-
+const App: React.FunctionComponent = (): ReactElement => {
   const [faces, setFaces] = useState<number>(6);
   const [times, setTimes] = useState<number>(1);
   const [rolls, setRolls] = useState<number[]>([]);

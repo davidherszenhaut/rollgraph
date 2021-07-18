@@ -30,7 +30,7 @@ test('rollDice return an array with correct length', () => {
 });
 
 test('rollDice returns an array where all elements are within constraints', () => {
-  let checks:boolean[] = [];
+  const checks:boolean[] = [];
   rolls.forEach((roll) =>{
     if (typeof roll === "number" && roll >= min && roll <= max) {
       checks.push(true);
