@@ -41,11 +41,15 @@ function App(): ReactElement {
       </p>
       <button onClick={updateRolls}>Roll Dice!</button>
       <p>{rolls.join(", ")}</p>
-      <input
-        type="checkbox"
-        onChange={(e) => setShouldKeepRolls(e.target.checked)}
-      />
-      <PieChart data={rolls} />
+      <label>
+        {" "}
+        Keep Rolls
+        <input
+          type="checkbox"
+          onChange={(e) => setShouldKeepRolls(e.target.checked)}
+        />
+      </label>
+      <PieChart rolls={rolls} />
     </div>
   );
 }
