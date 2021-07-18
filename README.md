@@ -10,7 +10,7 @@ Welcome to the repository of the website `rollgraph`. The live site can be found
 
 ## About
 
-`rollgraph` is a website where users can simulate dice rolls. Users can decide how many faces each die has, how many dice they want to roll at a time, and whether or not previous rolls are saved. Once some roll data has been recorded, various data visualizations will be constructed based on the data.
+`rollgraph` is a website where users can simulate dice rolls. Users can decide how many faces each die has, how many dice they want to roll at a time, and whether or not previous rolls are saved. Once some roll data has been recorded, various data visualizations will be constructed based on that data.
 
 ## Installation
 
@@ -34,7 +34,7 @@ cd rollgraph/
 npm install
 ```
 
-4. Start the package
+4. Start the project
 
 ```bash
 npm start
@@ -46,11 +46,11 @@ npm start
 
 ### Issues
 
-If you run into any problems with `rollgraph` live or locally, please feel free to create a new issue if you see that one does not already exist for your problem. Make sure to include as much information as possible in the body of the issue to make fixing the problem easier.
+If you run into any problems with `rollgraph` (live or locally), please feel free to create a new issue if you see that one does not already exist for your problem. Make sure to include as much information as possible in the body of the issue to make fixing the problem easier.
 
 ### Pull Requests
 
-If you have written some code for a new feature or bug fix, please feel free to open a pull request, but make sure that an issue describing your new feature or bug fix exists first. Include a "closing" keyword somewhere in the body of your pull request so that it can be automatically linked to the related issue. For example, adding `Fixes #17` to the body of your pull request will link it to issue number 17 in the repository. When a pull request is created, a workflow will trigger with some checks that need to be passing before merging. If you wish to run these checks locally before creating your pull request, use these commands:
+If you have written some code for a new feature or bug fix, please feel free to open a pull request, but make sure that an issue describing your new feature or bug fix exists first. Include a "closing" keyword somewhere in the body of your pull request so that it can be automatically linked to the related issue. For example, adding `Fixes #17` to the body of your pull request will link it to issue number 17 in the repository. When a pull request is created, a workflow will trigger with some checks that need to pass before merging. If you wish to run these checks locally before creating your pull request, you can use these commands:
 
 - Prettier
 
