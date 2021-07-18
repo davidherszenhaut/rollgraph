@@ -1,8 +1,9 @@
 import React, { ReactElement, useState } from "react";
 import { rollDice } from "./utils";
 import "./App.css";
+import PieChart from "./PieChart/PieChart";
 
-const App: React.FunctionComponent = (): ReactElement => {
+function App(): ReactElement {
   const [faces, setFaces] = useState<number>(6);
   const [times, setTimes] = useState<number>(1);
   const [rolls, setRolls] = useState<number[]>([]);
@@ -40,12 +41,17 @@ const App: React.FunctionComponent = (): ReactElement => {
       </p>
       <button onClick={updateRolls}>Roll Dice!</button>
       <p>{rolls.join(", ")}</p>
-      <input
-        type="checkbox"
-        onChange={(e) => setShouldKeepRolls(e.target.checked)}
-      />
+      <label>
+        {" "}
+        Keep Rolls
+        <input
+          type="checkbox"
+          onChange={(e) => setShouldKeepRolls(e.target.checked)}
+        />
+      </label>
+      <PieChart rolls={rolls} />
     </div>
   );
-};
+}
 
 export default App;
