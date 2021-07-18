@@ -1,6 +1,6 @@
-import React, { ReactElement, useState } from 'react';
-import { rollDice } from './utils';
-import './App.css';
+import React, { ReactElement, useState } from "react";
+import { rollDice } from "./utils";
+import "./App.css";
 
 const App: React.FunctionComponent = (): ReactElement => {
   const [faces, setFaces] = useState<number>(6);
@@ -21,12 +21,31 @@ const App: React.FunctionComponent = (): ReactElement => {
       <header>
         <h1>🎲 rollgraph 📈</h1>
       </header>
-      <p>I would like to roll a <input type="number" min="1" value={faces} onChange={e => setFaces(parseInt(e.target.value))} />-sided die <input type="number" min="1" value={times} onChange={e => setTimes(parseInt(e.target.value))} /> {times === 1 ? "time" : "times"}.</p>
+      <p>
+        I would like to roll a{" "}
+        <input
+          type="number"
+          min="1"
+          value={faces}
+          onChange={(e) => setFaces(parseInt(e.target.value))}
+        />
+        -sided die{" "}
+        <input
+          type="number"
+          min="1"
+          value={times}
+          onChange={(e) => setTimes(parseInt(e.target.value))}
+        />{" "}
+        {times === 1 ? "time" : "times"}.
+      </p>
       <button onClick={updateRolls}>Roll Dice!</button>
-      <p>{rolls.join(', ')}</p>
-      <input type="checkbox" onChange={(e) => setShouldKeepRolls(e.target.checked)} />
+      <p>{rolls.join(", ")}</p>
+      <input
+        type="checkbox"
+        onChange={(e) => setShouldKeepRolls(e.target.checked)}
+      />
     </div>
   );
-}
+};
 
 export default App;
