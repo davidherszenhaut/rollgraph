@@ -1,46 +1,71 @@
-# Getting Started with Create React App
+# 🎲 rollgraph 📈
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Welcome to the repository of the website `rollgraph`. The live site can be found at https://davidherszenhaut.github.io/rollgraph/.
 
-## Available Scripts
+## Table of Contents
 
-In the project directory, you can run:
+- [About](#about)
+- [Installation](#installation)
+- [Contributing](#contributing)
 
-### `npm start`
+## About
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`rollgraph` is a website where users can simulate dice rolls. Users can decide how many faces each die has, how many dice they want to roll at a time, and whether or not previous rolls are saved. Once some roll data has been recorded, various data visualizations will be constructed based on the data.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Installation
 
-### `npm test`
+If you wish to install and run `rollgraph` locally, follow these steps:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. Clone the repository
 
-### `npm run build`
+```bash
+git clone https://github.com/davidherszenhaut/rollgraph.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+2. Go into the repository
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```bash
+cd rollgraph/
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+3. Install the dependencies
 
-### `npm run eject`
+```bash
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+4. Start the package
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```bash
+npm start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+`rollgraph` will now be running at `http://localhost:3000/rollgraph`
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+## Contributing
 
-## Learn More
+### Issues
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+If you run into any problems with `rollgraph` live or locally, please feel free to create a new issue if you see that one does not already exist for your problem. Make sure to include as much information as possible in the body of the issue to make fixing the problem easier.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### Pull Requests
+
+If you have written some code for a new feature or bug fix, please feel free to open a pull request, but make sure that an issue describing your new feature or bug fix exists first. Include a "closing" keyword somewhere in the body of your pull request so that it can be automatically linked to the related issue. For example, adding `Fixes #17` to the body of your pull request will link it to issue number 17 in the repository. When a pull request is created, a workflow will trigger with some checks that need to be passing before merging. If you wish to run these checks locally before creating your pull request, use these commands:
+
+- Prettier
+
+```bash
+npx prettier --check .
+```
+
+- ESLint
+
+```bash
+npx eslint . --ext .js,.jsx,.jts,.tsx
+```
+
+- Jest
+
+```bash
+npm run test
+```
