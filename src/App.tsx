@@ -49,7 +49,7 @@ function App(): ReactElement {
           onChange={(e) => setShouldKeepRolls(e.target.checked)}
         />
       </label>
-      <PieChart rolls={rolls} />
+      {rolls.length > 1 ? <PieChart rolls={rolls} /> : null}
     </div>
   );
 }

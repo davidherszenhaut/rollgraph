@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import { PieArcDatum } from "d3-shape";
 import { aggregateData } from "../utils";
 
-interface TempData {
+interface RollData {
   value: number;
   count: number;
 }
@@ -14,24 +14,30 @@ function PieChart(props: { rolls: number[] }): ReactElement {
   const height = 500;
 
   const pie = d3
-    .pie<TempData>()
+    .pie<RollData>()
     .sort(null)
     .value((d) => d.count);
   const arc = d3
-    .arc<PieArcDatum<TempData>>()
+    .arc<PieArcDatum<RollData>>()
     .innerRadius(0)
     .outerRadius(Math.min(width, height) / 2 - 1);
   const color = d3
     .scaleOrdinal<string, string>()
     .domain(data.map((d) => d.value.toString()))
-    .range(
-      d3
-        .quantize((t) => d3.interpolateSpectral(t * 0.8 + 0.1), data.length)
-        .reverse()
-    );
+    .range([
+      "#8fbcbb",
+      "#88c0d0",
+      "#81a1c1",
+      "#5e81ac",
+      "#bf616a",
+      "#d08770",
+      "#ebcb8b",
+      "#a3be8c",
+      "#b48ead",
+    ]);
   const radius = (Math.min(width, height) / 2) * 0.8;
   const arcLabel = d3
-    .arc<PieArcDatum<TempData>>()
+    .arc<PieArcDatum<RollData>>()
     .innerRadius(radius)
     .outerRadius(radius);
 
@@ -42,7 +48,7 @@ function PieChart(props: { rolls: number[] }): ReactElement {
       .attr("viewBox", `${[-width / 2, -height / 2, width, height]}`);
     svg
       .append("g")
-      .attr("stroke", "white")
+      .attr("stroke", "#eceff4")
       .selectAll("path")
       .data(arcs)
       .join("path")
@@ -53,7 +59,7 @@ function PieChart(props: { rolls: number[] }): ReactElement {
     svg
       .append("g")
       .attr("font-family", "sans-serif")
-      .attr("font-size", "12")
+      .attr("font-size", "16")
       .attr("text-anchor", "middle")
       .selectAll("text")
       .data(arcs)
@@ -64,6 +70,7 @@ function PieChart(props: { rolls: number[] }): ReactElement {
           .append("tspan")
           .attr("y", "-0.4em")
           .attr("font-weight", "bold")
+          .attr("fill", "#2e3440")
           .text((d) => d.data.value.toString())
           .call((text) =>
             text
