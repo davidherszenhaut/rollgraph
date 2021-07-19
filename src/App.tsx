@@ -2,6 +2,7 @@ import React, { ReactElement, useState } from "react";
 import { rollDice } from "./utils";
 import "./App.css";
 import PieChart from "./PieChart/PieChart";
+import BarChart from "./BarChart/BarChart";
 
 function App(): ReactElement {
   const [faces, setFaces] = useState<number>(6);
@@ -49,6 +50,7 @@ function App(): ReactElement {
           onChange={(e) => setShouldKeepRolls(e.target.checked)}
         />
       </label>
+      <BarChart rolls={rolls} />
       <PieChart rolls={rolls} />
     </div>
   );
