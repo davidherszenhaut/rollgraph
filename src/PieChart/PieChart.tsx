@@ -3,7 +3,7 @@ import * as d3 from "d3";
 import { PieArcDatum } from "d3-shape";
 import { aggregateData } from "../utils";
 
-interface TempData {
+interface RollData {
   value: number;
   count: number;
 }
@@ -14,11 +14,11 @@ function PieChart(props: { rolls: number[] }): ReactElement {
   const height = 500;
 
   const pie = d3
-    .pie<TempData>()
+    .pie<RollData>()
     .sort(null)
     .value((d) => d.count);
   const arc = d3
-    .arc<PieArcDatum<TempData>>()
+    .arc<PieArcDatum<RollData>>()
     .innerRadius(0)
     .outerRadius(Math.min(width, height) / 2 - 1);
   const color = d3
@@ -31,11 +31,11 @@ function PieChart(props: { rolls: number[] }): ReactElement {
     );
   const radius = (Math.min(width, height) / 2) * 0.8;
   const arcLabel = d3
-    .arc<PieArcDatum<TempData>>()
+    .arc<PieArcDatum<RollData>>()
     .innerRadius(radius)
     .outerRadius(radius);
 
-  function chart() {
+  function drawChart() {
     const arcs = pie(data);
     const svg = d3
       .select("#pie-chart")
@@ -78,7 +78,7 @@ function PieChart(props: { rolls: number[] }): ReactElement {
     return svg.node();
   }
 
-  chart();
+  drawChart();
 
   return (
     <div>
