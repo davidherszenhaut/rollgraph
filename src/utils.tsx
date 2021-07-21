@@ -13,7 +13,7 @@ export function rollDice(faces: number, times: number): number[] {
   return rolls;
 }
 
-interface Data {
+export interface Data {
   value: number;
   count: number;
 }

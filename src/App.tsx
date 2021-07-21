@@ -1,5 +1,5 @@
 import React, { ReactElement, useState } from "react";
-import { rollDice } from "./utils";
+import { rollDice, aggregateData, Data } from "./utils";
 import "./App.css";
 import PieChart from "./PieChart/PieChart";
 
@@ -15,6 +15,32 @@ function App(): ReactElement {
     } else {
       setRolls(rollDice(faces, times));
     }
+  }
+
+  function buildTable() {
+    const data: Array<Data> = aggregateData(rolls);
+    return (
+      <div id="rollsTableContainer">
+        <table>
+          <thead>
+            <tr>
+              <th>Value</th>
+              <th>Count</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.value.toString() + item.count.toString()}>
+                <td key={item.value}>{item.value}</td>
+                <td key={item.value.toString() + item.count.toString()}>
+                  {item.count}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    );
   }
 
   return (
@@ -40,15 +66,17 @@ function App(): ReactElement {
         {times === 1 ? "time" : "times"}.
       </p>
       <button onClick={updateRolls}>Roll Dice!</button>
-      <p>{rolls.join(", ")}</p>
-      <label>
-        {" "}
-        Keep Rolls
-        <input
-          type="checkbox"
-          onChange={(e) => setShouldKeepRolls(e.target.checked)}
-        />
-      </label>
+      {rolls.length <= 2 ? <p>{rolls.join(", ")}</p> : buildTable()}
+      <p>
+        <label>
+          {" "}
+          Keep Rolls
+          <input
+            type="checkbox"
+            onChange={(e) => setShouldKeepRolls(e.target.checked)}
+          />
+        </label>
+      </p>
       {rolls.length > 1 ? <PieChart rolls={rolls} /> : null}
     </div>
   );
