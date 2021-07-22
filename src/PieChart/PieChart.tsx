@@ -2,23 +2,24 @@ import React, { ReactElement } from "react";
 import * as d3 from "d3";
 import { PieArcDatum } from "d3-shape";
 import { aggregateData } from "../utils";
+import { Data } from "../Types";
 
-interface RollData {
-  value: number;
-  count: number;
-}
-
+/**
+ *
+ * @param props The `rolls` array containing all saved die roll data.
+ * @returns The PieChart element
+ */
 function PieChart(props: { rolls: number[] }): ReactElement {
   const data = aggregateData(props.rolls);
   const width = 500;
   const height = 500;
 
   const pie = d3
-    .pie<RollData>()
+    .pie<Data>()
     .sort(null)
     .value((d) => d.count);
   const arc = d3
-    .arc<PieArcDatum<RollData>>()
+    .arc<PieArcDatum<Data>>()
     .innerRadius(0)
     .outerRadius(Math.min(width, height) / 2 - 1);
   const color = d3
@@ -37,10 +38,14 @@ function PieChart(props: { rolls: number[] }): ReactElement {
     ]);
   const radius = (Math.min(width, height) / 2) * 0.8;
   const arcLabel = d3
-    .arc<PieArcDatum<RollData>>()
+    .arc<PieArcDatum<Data>>()
     .innerRadius(radius)
     .outerRadius(radius);
 
+  /**
+   *
+   * @returns The SVG node containing the pie chart.
+   */
   function chart() {
     const arcs = pie(data);
     const svg = d3

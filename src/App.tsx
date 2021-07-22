@@ -1,14 +1,22 @@
 import React, { ReactElement, useState } from "react";
-import { rollDice, aggregateData, Data } from "./utils";
+import { rollDice, aggregateData } from "./utils";
+import { Data } from "./Types";
 import "./App.css";
 import PieChart from "./PieChart/PieChart";
 
+/**
+ *
+ * @returns The main `rollgraph` element.
+ */
 function App(): ReactElement {
   const [faces, setFaces] = useState<number>(6);
   const [times, setTimes] = useState<number>(1);
   const [rolls, setRolls] = useState<number[]>([]);
   const [shouldKeepRolls, setShouldKeepRolls] = useState<boolean>(false);
 
+  /**
+   * Updates the `rolls` array by either appending new rolls to it or resetting it.
+   */
   function updateRolls() {
     if (shouldKeepRolls) {
       setRolls([...rolls, ...rollDice(faces, times)]);
@@ -17,6 +25,10 @@ function App(): ReactElement {
     }
   }
 
+  /**
+   *
+   * @returns The table element displaying how many times each face value was rolled.
+   */
   function buildTable() {
     const data: Array<Data> = aggregateData(rolls);
     return (
