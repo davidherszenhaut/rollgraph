@@ -1,0 +1,5 @@
+{
+  "out": "docs",
+  "gitRemote": "https://github.com/davidherszenhaut/rollgraph",
+  "entryPoints": "src"
+}

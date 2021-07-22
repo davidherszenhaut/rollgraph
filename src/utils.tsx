@@ -1,3 +1,11 @@
+import { Data } from "./Types";
+
+/**
+ *
+ * @param min The lower bound for the random number.
+ * @param max The upper bound for the random number.
+ * @returns A random integer between `min` and `max`.
+ */
 export function generateRandomIntegerInclusive(
   min: number,
   max: number
@@ -11,11 +19,6 @@ export function rollDice(faces: number, times: number): number[] {
     rolls.push(generateRandomIntegerInclusive(1, faces));
   }
   return rolls;
-}
-
-export interface Data {
-  value: number;
-  count: number;
 }
 
 export function aggregateData(rolls: number[]): Array<Data> {

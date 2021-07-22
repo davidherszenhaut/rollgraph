@@ -1,5 +1,6 @@
 import React, { ReactElement, useState } from "react";
-import { rollDice, aggregateData, Data } from "./utils";
+import { rollDice, aggregateData } from "./utils";
+import { Data } from "./Types";
 import "./App.css";
 import PieChart from "./PieChart/PieChart";
 
