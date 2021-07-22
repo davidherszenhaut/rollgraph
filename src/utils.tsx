@@ -13,6 +13,12 @@ export function generateRandomIntegerInclusive(
   return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
+/**
+ *
+ * @param faces The highest number that the die can roll.
+ * @param times How many times the die will be rolled.
+ * @returns An array of die rolls based on `faces` and `times`.
+ */
 export function rollDice(faces: number, times: number): number[] {
   const rolls: number[] = [];
   for (let i = 0; i < times; i++) {
@@ -21,6 +27,11 @@ export function rollDice(faces: number, times: number): number[] {
   return rolls;
 }
 
+/**
+ *
+ * @param rolls An array of die rolls.
+ * @returns An array of `Data` objects where each `Data.value` is the face number and `Data.count` is the number of times that face value was rolled.
+ */
 export function aggregateData(rolls: number[]): Array<Data> {
   const counts: { [key: number]: number } = {};
   for (let i = 0; i < rolls.length; i++) {
