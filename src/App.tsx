@@ -51,6 +51,7 @@ function App(): ReactElement {
       <p>
         I would like to roll a{" "}
         <input
+          className="numberInput"
           type="number"
           min="1"
           value={faces}
@@ -58,6 +59,7 @@ function App(): ReactElement {
         />
         -sided die{" "}
         <input
+          className="numberInput"
           type="number"
           min="1"
           value={times}
@@ -65,7 +67,9 @@ function App(): ReactElement {
         />{" "}
         {times === 1 ? "time" : "times"}.
       </p>
-      <button onClick={updateRolls}>Roll Dice!</button>
+      <button id="rollDiceButton" onClick={updateRolls}>
+        Roll Dice!
+      </button>
       {rolls.length <= 2 ? <p>{rolls.join(", ")}</p> : buildTable()}
       <p>
         <label>
