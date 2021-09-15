@@ -1,5 +1,3 @@
-import { Data } from "./Types";
-
 /**
  *
  * @param min The lower bound for the random number.
