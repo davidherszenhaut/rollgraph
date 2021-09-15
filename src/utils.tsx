@@ -1,5 +1,3 @@
-import { Data } from "./Types";
-
 /**
  *
  * @param min The lower bound for the random number.
@@ -25,6 +23,11 @@ export function rollDice(faces: number, times: number): number[] {
     rolls.push(generateRandomIntegerInclusive(1, faces));
   }
   return rolls;
+}
+
+export interface Data {
+  value: number;
+  count: number;
 }
 
 /**

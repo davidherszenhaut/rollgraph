@@ -1,8 +1,7 @@
 import React, { ReactElement } from "react";
 import * as d3 from "d3";
 import { PieArcDatum } from "d3-shape";
-import { aggregateData } from "../utils";
-import { Data } from "../Types";
+import { aggregateData, Data } from "../utils";
 
 /**
  *
