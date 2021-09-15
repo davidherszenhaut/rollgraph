@@ -1,8 +1,8 @@
 import React, { ReactElement, useState } from "react";
-import { rollDice, aggregateData } from "./utils";
-import { Data } from "./Types";
+import { rollDice, aggregateData, Data } from "./utils";
 import "./App.css";
 import PieChart from "./PieChart/PieChart";
+import BarChart from "./BarChart/BarChart";
 
 /**
  *
@@ -93,6 +93,7 @@ function App(): ReactElement {
           />
         </label>
       </p>
+      {rolls.length > 1 ? <BarChart rolls={rolls} /> : null}
       {rolls.length > 1 ? <PieChart rolls={rolls} /> : null}
     </div>
   );
