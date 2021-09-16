@@ -10,6 +10,10 @@ Welcome to the repository of the website `rollgraph`. The live site can be found
 - [Installation](#installation)
 - [Contributing](#contributing)
 
+<p align="center">
+  <img src="public/demo.gif" />
+</p>
+
 ## About
 
 `rollgraph` is a website where users can simulate dice rolls. Users can decide how many faces each die has, how many dice they want to roll at a time, and whether or not previous rolls are saved. Once some roll data has been recorded, various data visualizations will be constructed based on that data.
