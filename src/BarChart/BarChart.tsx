@@ -2,17 +2,21 @@ import React, { ReactElement } from "react";
 import { aggregateData } from "../utils";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
+import "./BarChart.css"
 
 function BarChart(props: { rolls: number[] }): ReactElement {
   const options = {
     chart: {
       type: "column",
+      backgroundColor: "#2e3440",
+      width: 500,
     },
     title: {
-      text: "Bar Chart",
+      text: "",
     },
     series: [
       {
+        showInLegend: false,
         data: aggregateData(props.rolls).map(Object.values),
       },
     ],
@@ -32,12 +36,38 @@ function BarChart(props: { rolls: number[] }): ReactElement {
         colorByPoint: true,
       },
     },
+    tooltip: {
+      enabled: false,
+    },
+    xAxis: {
+      tickColor: "#eceff4",
+      labels: {
+        style: {
+          color: "#eceff4",
+        },
+      },
+    },
+    yAxis: {
+      title: {
+        enabled: false,
+      },
+      allowDecimals: false,
+      tickColor: "#eceff4",
+      labels: {
+        style: {
+          color: "#eceff4",
+        },
+      },
+    },
+    credits: {
+      enabled: false,
+    },
   };
 
   console.log(aggregateData(props.rolls));
 
   return (
-    <div>
+    <div id="bar-chart-container">
       <HighchartsReact highcharts={Highcharts} options={options} />
     </div>
   );
