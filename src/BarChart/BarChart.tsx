@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import { aggregateData } from "../utils";
 import Highcharts from "highcharts";
 import HighchartsReact from "highcharts-react-official";
-import "./BarChart.css"
+import "./BarChart.css";
 
 function BarChart(props: { rolls: number[] }): ReactElement {
   const options = {
