@@ -93,7 +93,7 @@ function App(): ReactElement {
           />
         </label>
       </p>
-      {rolls.length > 1 ? <BarChart rolls={rolls} /> : null}
+      {rolls.length > 2 ? <BarChart rolls={rolls} /> : null}
       {rolls.length > 1 ? <PieChart rolls={rolls} /> : null}
     </div>
   );
