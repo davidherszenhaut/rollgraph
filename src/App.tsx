@@ -61,22 +61,26 @@ function App(): ReactElement {
         <h1>🎲 rollgraph 📈</h1>
       </header>
       <p>
-        I would like to roll a{" "}
-        <input
-          className="numberInput"
-          type="number"
-          min="1"
-          value={faces}
-          onChange={(e) => setFaces(parseInt(e.target.value))}
-        />
-        -sided die{" "}
-        <input
-          className="numberInput"
-          type="number"
-          min="1"
-          value={times}
-          onChange={(e) => setTimes(parseInt(e.target.value))}
-        />{" "}
+        <label>
+          I would like to roll a{" "}
+          <input
+            className="numberInput"
+            type="number"
+            min="1"
+            value={faces}
+            onChange={(e) => setFaces(parseInt(e.target.value))}
+          />
+        </label>
+        <label>
+          -sided die{" "}
+          <input
+            className="numberInput"
+            type="number"
+            min="1"
+            value={times}
+            onChange={(e) => setTimes(parseInt(e.target.value))}
+          />{" "}
+        </label>
         {times === 1 ? "time" : "times"}.
       </p>
       <button id="rollDiceButton" onClick={updateRolls}>
