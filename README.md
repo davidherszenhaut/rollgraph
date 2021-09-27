@@ -4,15 +4,15 @@ Welcome to the repository of the website `rollgraph`. The live site can be found
 
 ![GitHub deployments](https://img.shields.io/github/deployments/davidherszenhaut/rollgraph/github-pages) ![GitHub branch checks state](https://img.shields.io/github/checks-status/davidherszenhaut/rollgraph/gh-pages)
 
+<p align="center">
+  <img src="public/demo.gif" />
+</p>
+
 ## Table of Contents
 
 - [About](#about)
 - [Installation](#installation)
 - [Contributing](#contributing)
-
-<p align="center">
-  <img src="public/demo.gif" />
-</p>
 
 ## About
 
